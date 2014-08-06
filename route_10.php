@@ -41,7 +41,7 @@ foreach($data['bus'] as $result) {
 
 
 foreach ($data as $line) { // parse the returned data
-    $lat = $line->bus->lat; // get lat value
+    $lat = $line->bus['lat']; // get lat value
     $lng =  $line->bus->lng; // get lng value
     $vehicleNo = $line->bus->VehicleID; // get vehicle ID number
     $direction = $line->bus->Direction; // get direction of travel
