@@ -35,7 +35,7 @@ var_dump($data); // works
 
 // http://stackoverflow.com/questions/17995877/get-value-from-json-array-in-php
 echo "<p>Doing echo</p><br/>";
-foreach($data['data'] as $result) {
+foreach($data['bus'] as $result) {
     echo $result['Direction'], '<br />';
 }
 
