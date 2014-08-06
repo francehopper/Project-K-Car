@@ -34,7 +34,7 @@ var_dump($data);
 
 // http://stackoverflow.com/questions/17995877/get-value-from-json-array-in-php
 
-echo $data['Direction'];
+echo $data;
 
 foreach ($data as $line) { // parse the returned data
     $lat = $line->bus->lat; // get lat value
