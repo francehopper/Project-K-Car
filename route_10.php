@@ -38,11 +38,11 @@ echo $data['Direction'];
 
 foreach ($data as $line) { // parse the returned data
     $lat = $line->bus->lat; // get lat value
-    $lng =  $line->lng; // get lng value
-    $vehicleNo = $line->VehicleID; // get vehicle ID number
-    $direction = $line->Direction; // get direction of travel
-    $goingTo = $line->destination; // get vehicle destination
-    $lastReport = $line->Offset; // get minutes since last location report
+    $lng =  $line->bus->lng; // get lng value
+    $vehicleNo = $line->bus->VehicleID; // get vehicle ID number
+    $direction = $line->bus->Direction; // get direction of travel
+    $goingTo = $line->bus->destination; // get vehicle destination
+    $lastReport = $line->bus->Offset; // get minutes since last location report
     $message = '<li> Vehicle No. '.$vehicleNo.' heading '.$direction.' to '.$goingTo.' was last seen '.$lastReport.' minutes ago at '.$lat.' latitude and '.$lng.' longitute.';
     echo $message; // return the status
 }
