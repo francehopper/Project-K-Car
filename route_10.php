@@ -30,10 +30,11 @@ $json = file_get_contents('http://www3.septa.org/hackathon/TransitView/10');
 $data = json_decode($json, true);
 
 // DEBUG: dump fetched data
+echo "Doing var_dump<br/>";
 var_dump($data);
 
 // http://stackoverflow.com/questions/17995877/get-value-from-json-array-in-php
-
+echo "Doing echo<br/>";
 echo $data;
 
 foreach ($data as $line) { // parse the returned data
