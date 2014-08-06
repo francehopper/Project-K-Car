@@ -40,10 +40,10 @@ foreach($data['bus'] as $result) {
 }
 
 
-foreach ($data as $line) { // parse the returned data
-    $lat = $line->bus['lat']; // get lat value
-    $lng =  $line->bus->lng; // get lng value
-    $vehicleNo = $line->bus->VehicleID; // get vehicle ID number
+foreach ($data['bus'] as $line) { // parse the returned data
+    $lat = $line['lat']; // get lat value
+    $lng =  $line['lng']; // get lng value
+    $vehicleNo = $line->VehicleID; // get vehicle ID number
     $direction = $line->bus->Direction; // get direction of travel
     $goingTo = $line->bus->destination; // get vehicle destination
     $lastReport = $line->bus->Offset; // get minutes since last location report
