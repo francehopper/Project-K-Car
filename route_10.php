@@ -27,7 +27,7 @@ $json = file_get_contents('http://www3.septa.org/hackathon/TransitView/10');
 //file_put_contents('file/path/my-file.txt', $json);
 
 // get data from JSON feed
-$data = json_decode($json);
+$data = json_decode($json, true);
 
 // DEBUG: dump fetched data
 var_dump($data);
