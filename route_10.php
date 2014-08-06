@@ -30,12 +30,15 @@ $json = file_get_contents('http://www3.septa.org/hackathon/TransitView/10');
 $data = json_decode($json, true);
 
 // DEBUG: dump fetched data
-echo "Doing var_dump<br/>";
-var_dump($data);
+echo "<p>Doing var_dump</p><br/>";
+var_dump($data); // works
 
 // http://stackoverflow.com/questions/17995877/get-value-from-json-array-in-php
-echo "Doing echo<br/>";
-echo $data;
+echo "<p>Doing echo</p><br/>";
+foreach($data['data'] as $result) {
+    echo $result['Direction'], '<br />';
+}
+
 
 foreach ($data as $line) { // parse the returned data
     $lat = $line->bus->lat; // get lat value
