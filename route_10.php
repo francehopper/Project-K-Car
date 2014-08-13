@@ -73,7 +73,7 @@ foreach ($data['bus'] as $line) { // parse the returned data
 // curl_close($ch);
 
 // start Google Maps experiment
-<div id="map_div" style="width: 400px; height: 300px"></div>
+echo '<div id="map_div" style="width: 400px; height: 300px"></div>'
 
 
 
