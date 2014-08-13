@@ -27,7 +27,7 @@ $data = json_decode($json, true);
 // $dataForGoogle = array();
 // start Google Maps experiment
 echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
-// echo '<script type="text/javascript">';
+echo '<script type="text/javascript">';
 // echo 'google.load("visualization", "1", {packages:["map"]});';
 // echo 'google.setOnLoadCallback(drawChart);';
 // echo 'function drawChart() {';
@@ -48,7 +48,7 @@ foreach ($data['bus'] as $line) { // parse the returned data
 // echo 'var map = new google.visualization.Map(document.getElementById(\'map_div\'));';
 // echo 'map.draw(data, {showTip: true});';
 // echo '}';
-// echo '</script>';
+echo '</script>';
 
 // draw Google Map
 echo '<div id="map_div" style="width: 400px; height: 300px"></div>';
