@@ -27,12 +27,12 @@ $data = json_decode($json, true);
 // $dataForGoogle = array();
 // start Google Maps experiment
 echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
-echo '<script type="text/javascript">';
-echo 'google.load("visualization", "1", {packages:["map"]});';
-echo 'google.setOnLoadCallback(drawChart);';
-echo 'function drawChart() {';
-echo 'var data = google.visualization.arrayToDataTable([';
-echo '[\'Lat\', \'Long\', \'Destination\'],';
+// echo '<script type="text/javascript">';
+// echo 'google.load("visualization", "1", {packages:["map"]});';
+// echo 'google.setOnLoadCallback(drawChart);';
+// echo 'function drawChart() {';
+// echo 'var data = google.visualization.arrayToDataTable([';
+// echo '[\'Lat\', \'Long\', \'Destination\'],';
 foreach ($data['bus'] as $line) { // parse the returned data
     $lat = $line['lat']; // get lat value
     $lng =  $line['lng']; // get lng value
@@ -42,13 +42,13 @@ foreach ($data['bus'] as $line) { // parse the returned data
     $lastReport = $line['Offset']; // get minutes since last location report
     $message = '<li> Vehicle No. '.$vehicleNo.' heading '.$direction.' to '.$goingTo.' was last seen '.$lastReport.' minutes ago at '.$lat.' latitude and '.$lng.' longitute.';
     echo $message; // return the status
-    echo '[$lat, $lng, $destination],'; // pass needed data to Google Maps for plotting
+    // echo '[$lat, $lng, $destination],'; // pass needed data to Google Maps for plotting
 }
-echo ']);';
-echo 'var map = new google.visualization.Map(document.getElementById(\'map_div\'));';
-echo 'map.draw(data, {showTip: true});';
-echo '}';
-echo '</script>';
+// echo ']);';
+// echo 'var map = new google.visualization.Map(document.getElementById(\'map_div\'));';
+// echo 'map.draw(data, {showTip: true});';
+// echo '}';
+// echo '</script>';
 
 // draw Google Map
 echo '<div id="map_div" style="width: 400px; height: 300px"></div>';
