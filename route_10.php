@@ -74,6 +74,7 @@ foreach ($data['bus'] as $line) { // parse the returned data
 
 // start Google Maps experiment
 echo '<div id="map_div" style="width: 400px; height: 300px"></div>'
+// http://stackoverflow.com/questions/13731800/send-php-variable-to-javascript-function
 
 
 
