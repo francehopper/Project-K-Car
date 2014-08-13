@@ -24,7 +24,7 @@ $data = json_decode($json, true);
 
 
 
-$dataForGoogle = array();
+// $dataForGoogle = array();
 // start Google Maps experiment
 echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
 echo '<script type="text/javascript">';
@@ -51,7 +51,7 @@ echo '}';
 echo '</script>';
 
 // draw Google Map
-echo '<div id="map_div" style="width: 400px; height: 300px"></div>'
+echo '<div id="map_div" style="width: 400px; height: 300px"></div>';
 // http://stackoverflow.com/questions/13731800/send-php-variable-to-javascript-function
 
 
