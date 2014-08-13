@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>K-Car > Trolley Route 10</title>
+<title>K-Car > Trolley Route 13</title>
 
 
 </head>
@@ -20,7 +20,7 @@
 
 // close cURL resource, and free up system resources
 
-$json = file_get_contents('http://www3.septa.org/hackathon/TransitView/10');
+$json = file_get_contents('http://www3.septa.org/hackathon/TransitView/13');
 // $json = "http://www3.septa.org/hackathon/TransitViewAll/";
 
 // you can save $json to a file, if needed :
@@ -52,8 +52,6 @@ foreach ($data['bus'] as $line) { // parse the returned data
     echo $message; // return the status
 }
 // curl_close($ch);
-
-// start Google Maps experiment
 
 
 
