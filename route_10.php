@@ -41,6 +41,7 @@ foreach ($data['bus'] as $line) { // parse the returned data
     $goingTo = $line['destination']; // get vehicle destination
     $lastReport = $line['Offset']; // get minutes since last location report
     $message = '<li> Vehicle No. '.$vehicleNo.' heading '.$direction.' to '.$goingTo.' was last seen '.$lastReport.' minutes ago at '.$lat.' latitude and '.$lng.' longitute.';
+    // need to turn this off when doing Google Maps, will likly need to do this foreach twice
     // echo $message; // return the status
     // echo '[$lat, $lng, $destination],'; // pass needed data to Google Maps for plotting
 }
