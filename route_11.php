@@ -8,6 +8,7 @@
 <body>
 <?php
 $connection = mysqli_connect('totoro.hppr.co:3308', 'SEPTA', 'D1oASa!', 'SEPTA') or die(mysqli_connect_error());
+date_default_timezone_set('EST');
 $today = date("Y-m-d H:i:s");
 // connect to SEPTA to get vehicle locations
 // create a new cURL resource
