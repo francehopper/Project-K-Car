@@ -8,6 +8,7 @@
 <body>
 <?php
 $connection = mysqli_connect('totoro.hppr.co:3308', 'SEPTA', 'D1oASa!', 'SEPTA') or die(mysqli_connect_error());
+$today = date("Y-m-d H:i:s");
 // connect to SEPTA to get vehicle locations
 // create a new cURL resource
 // $ch = curl_init();
@@ -40,7 +41,7 @@ foreach ($data['bus'] as $line) { // parse the returned data
     $lastReport = $line['Offset']; // get minutes since last location report
     $message = '<li> Vehicle No. '.$vehicleNo.' heading '.$direction.' to '.$goingTo.' was last seen '.$lastReport.' minutes ago at '.$lat.' latitude and '.$lng.' longitute.';
     echo $message; // return the status
-    $thequery = 'insert into KCar (TrolleyNo, dest, lat, lng, direction) values ("'.$vehicleNo.'","'.$goingTo.'","'.$lat.'","'.$lng.'","'.$direction.'")';
+    $thequery = 'insert into KCar (TrolleyNo, dest, lat, lng, direction, when) values ("'.$vehicleNo.'","'.$goingTo.'","'.$lat.'","'.$lng.'","'.$direction.'","'.$today.'")';
 	mysqli_query($connection, $thequery) or die (mysqli_error($connection));
 }
 // curl_close($ch);
