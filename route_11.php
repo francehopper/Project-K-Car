@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php
+$connection = mysqli_connect('totoro.hppr.co:3308', 'SEPTA', 'D1oASa!', 'SEPTA') or die(mysqli_connect_error());
 // connect to SEPTA to get vehicle locations
 // create a new cURL resource
 // $ch = curl_init();
@@ -29,17 +30,6 @@ $json = file_get_contents('http://www3.septa.org/hackathon/TransitView/11');
 // get data from JSON feed
 $data = json_decode($json, true);
 
-// DEBUG: dump fetched data
-// echo "<p>Doing var_dump</p><br/>";
-// var_dump($data); // works
-
-// http://stackoverflow.com/questions/17995877/get-value-from-json-array-in-php
-// debug
-// echo "<p>Doing echo</p><br/>";
-// foreach($data['bus'] as $result) {
-//     echo $result['Direction'], '<br />';
-// }
-
 
 foreach ($data['bus'] as $line) { // parse the returned data
     $lat = $line['lat']; // get lat value
@@ -50,6 +40,8 @@ foreach ($data['bus'] as $line) { // parse the returned data
     $lastReport = $line['Offset']; // get minutes since last location report
     $message = '<li> Vehicle No. '.$vehicleNo.' heading '.$direction.' to '.$goingTo.' was last seen '.$lastReport.' minutes ago at '.$lat.' latitude and '.$lng.' longitute.';
     echo $message; // return the status
+    $thequery = 'insert into KCar (RecordID, TrolleyNo, dest, lat, lng, direction) values ("'','.$vehicleNo.'","'.$goingTo.'","'.$lat.'","'.$lng.'","'.$direction.'")';
+	mysqli_query($connection, $thequery) or die (mysqli_error($connection));
 }
 // curl_close($ch);
 
