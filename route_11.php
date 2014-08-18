@@ -5,6 +5,11 @@
 </head>
 <body>
 <?php
+// auto refresh the page every two minutes
+// this is done to measure the distance a trolley has moved to calculate speed
+$pageURL=$_SERVER['REQUEST_URI'];
+header("Refresh: 120; URL=$pageURL");
+
 // open an SQL connection
 $connection = mysqli_connect('totoro.hppr.co:3308', 'SEPTA', 'D1oASa!', 'SEPTA') or die(mysqli_connect_error());
 date_default_timezone_set('UTC'); // set timezone as UTC
@@ -27,6 +32,8 @@ foreach ($data['bus'] as $line) { // parse the returned data
     $thequery = 'insert into KCar (TrolleyNo, dest, lat, lng, direction, recordedAt) values ("'.$vehicleNo.'","'.$goingTo.'","'.$lat.'","'.$lng.'","'.$direction.'","'.$today.'")';
 	mysqli_query($connection, $thequery) or die (mysqli_error($connection));
 }
+// close SQL connection
+mysqli_close($connection);
 // END OF PHP!
 ?>
 </body>

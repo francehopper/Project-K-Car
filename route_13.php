@@ -27,6 +27,8 @@ foreach ($data['bus'] as $line) { // parse the returned data
     $thequery = 'insert into KCar (TrolleyNo, dest, lat, lng, direction, recordedAt) values ("'.$vehicleNo.'","'.$goingTo.'","'.$lat.'","'.$lng.'","'.$direction.'","'.$today.'")';
 	mysqli_query($connection, $thequery) or die (mysqli_error($connection));
 }
+// close SQL connection
+mysqli_close($connection);
 // END OF PHP!
 ?>
 </body>
