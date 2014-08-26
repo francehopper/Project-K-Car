@@ -6,7 +6,7 @@
 <body>
 <?php
 // open an SQL connection
-$connection = mysqli_connect('totoro.hppr.co:3308', 'SEPTA', 'D1oASa!', 'SEPTA') or die(mysqli_connect_error());
+$connection = mysqli_connect('totoro.hppr.co', 'SEPTA', 'D1oASa!', 'SEPTA') or die(mysqli_connect_error());
 date_default_timezone_set('UTC'); // set timezone as UTC
 $today = date("Y-m-d H:i:s"); // fetch current date and time for SQL timestamping
 // connect to SEPTA to get vehicle locations
